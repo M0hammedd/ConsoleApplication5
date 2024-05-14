@@ -94,7 +94,7 @@ int main() {
     {
         for (int i = 0; i < max_destination; i++)
         {
-            cout << i + 1 << " : " << destinations[i]->destination_name << destinations[i]->location_name << destinations[i]->p << endl;
+            cout << i + 1 << " : " << destinations[i]->destination_name << destinations[i]->location_name << destinations[i]->p << endl; // تم تعديل هذا السطر وحل المشكله
         }
         int choice;
         int days;
@@ -104,7 +104,7 @@ int main() {
         cin >> days;
         if (choice == 1)
         {
-            // total_bill = destinations[0].p;
+            total_bill = destinations[0]->p*days;
         }
 
     }
