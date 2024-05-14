@@ -51,7 +51,7 @@ int main() {
     int age;
     int id;
     int choice;
-    double total_bill;
+    double total_bill = 0.0 ;
 
     //string destinatio_name;
     //string location_name;
@@ -94,7 +94,9 @@ int main() {
     {
         for (int i = 0; i < max_destination; i++)
         {
-            cout << i + 1 << " : " << destinations[i]->destination_name << destinations[i]->location_name << destinations[i]->p << endl; // تم تعديل هذا السطر وحل المشكله
+            cout << i + 1 << " : " << "destination is : "  << destinations[i]->destination_name ; // هذا السطر يقوم بعرض اسم الرحله
+            cout <<" , location is : "  << destinations[i]->location_name; // هذا السطر يقوم بعرض موقع الرحله
+            cout << "  , ticket cost : " <<destinations[i]->p << endl; // هذا السطر يقوم بعرض تكلفة الرحله
         }
         int choice;
         int days;
@@ -102,10 +104,14 @@ int main() {
         cin >> choice;
         cout << "choose how many days : ";
         cin >> days;
-        if (choice == 1)
+        for(int i = 0 ; i <5 ; i++ )  // تم حذف (اف) ووضع فور لووب في الجزء الخاص بأدخال عدد الايام وحساب الفاتوره 
         {
-            total_bill = destinations[0]->p*days;
+         total_bill = destinations[i]->p*days; // ضرب عدد الايام في سعر التذكره  // يمكنك الرجوع الي سطر 54 للاطلاع علي المتغير
         }
+        //if (choice == 1)
+        //{
+        //    total_bill = destinations[0]->p*days;
+        //}
 
     }
 
@@ -114,7 +120,7 @@ int main() {
 
 
 
-
+cout << total_bill;
 
 
 
