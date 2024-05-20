@@ -34,7 +34,7 @@ public:
     booking() {};
     booking(string name, string location, double price) : destination_name(name), location_name(location), p(price) {};
     string getlocation() { return location_name; }
-   
+
 };
 
 
@@ -51,7 +51,7 @@ int main() {
     int age;
     int id;
     int choice;
-    double total_bill = 0.0 ;
+    double total_bill = 0.0;
 
     //string destinatio_name;
     //string location_name;
@@ -94,45 +94,48 @@ int main() {
     {
         for (int i = 0; i < max_destination; i++)
         {
-            cout << i + 1 << " : " << "destination is : "  << destinations[i]->destination_name ; // هذا السطر يقوم بعرض اسم الرحله
-            cout <<" , location is : "  << destinations[i]->location_name; // هذا السطر يقوم بعرض موقع الرحله
-            cout << "  , ticket cost : " <<destinations[i]->p << endl; // هذا السطر يقوم بعرض تكلفة الرحله
+            cout << i + 1 << " : " << "destination is : " << destinations[i]->destination_name;
+            cout << " , location is : " << destinations[i]->location_name;
+            cout << "  , ticket cost : " << destinations[i]->p << endl;
         }
-        int choice;
+        int chosen_trip;
         int days;
-        cout << " choose the trip :";
-        cin >> choice;
-        cout << "choose how many days : ";
+        cout << "Choose the trip (1-5): ";
+        cin >> chosen_trip;
+        cout << "Enter number of days: ";
         cin >> days;
-        for(int i = 0 ; i <5 ; i++ )  // تم حذف (اف) ووضع فور لووب في الجزء الخاص بأدخال عدد الايام وحساب الفاتوره 
+        if (chosen_trip >= 1) 
         {
-         total_bill = destinations[i]->p*days; // ضرب عدد الايام في سعر التذكره  // يمكنك الرجوع الي سطر 54 للاطلاع علي المتغير
+            total_bill = destinations[chosen_trip - 1]->p * days;
         }
-        //if (choice == 1)
-        //{
-        //    total_bill = destinations[0]->p*days;
-        //}
-
     }
-
-
-
-
-
-
-cout << total_bill;
-
-
-
-    for (int i = 0; i < max_destination; i++)
+    else if (choice == 3)
     {
-        delete destinations[i];
-
+        
+            cout << "\n-------------------------Bill--------------------------" << endl;
+            cout << "Customer Name: "  << endl;
+            cout << "Destination: "  << endl;
+            cout << "Location: "<< endl;
+            cout << "Number of Days: " << endl;
+            cout << "Total Bill: $" << total_bill << endl;
+            cout << "-------------------------------------------------------------" << endl;
+        
     }
+    else if (choice == 4)
+    {
+        cout << "============================== good bye ! ===============================";
+    }
+    
 
 
 
-//name
+for (int i = 0; i < max_destination; i++)
+{
+    delete destinations[i];
+}
+
+
+
 
 
 }
