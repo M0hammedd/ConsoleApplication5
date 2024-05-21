@@ -63,7 +63,7 @@ public:
 
 };
 
-class booking : public customer {
+class booking {
 public:
     string destination_name;
     string location_name;
@@ -91,6 +91,7 @@ int main() {
       string gender;
       int age;
       int id;*/
+    system("color 54");
     int days;
     int choice;
     double total_bill = 0.0;
